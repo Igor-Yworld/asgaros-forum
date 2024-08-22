@@ -16,12 +16,17 @@ class AsgarosForumMap {
     }
 
 
-// It is possible that you will have to remove the slash in several places in /sitemap.xml
+
     public function show_map_navigation($current_view) {
 
             switch ($current_view) {
                 case 'forum':
-					$link = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum).'/sitemap.xml';
+					$slug = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum);
+                    if(substr($slug, -1)=='/'){
+                    $link = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum).'sitemap.xml';
+                    }else {
+                    $link = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum).'/sitemap.xml';
+                    }
                     echo '<!--noindex--><span class="fas fa-sitemap"></span>';
                     echo '<a href="'.esc_url($link).'" target="_blank" rel="nofollow">'.esc_html__('Xml Sitemap', 'asgaros-forum').'</a><!--/noindex-->';
                     break;
@@ -31,7 +36,12 @@ class AsgarosForumMap {
 
     public function render_map() {
 		$currentUrl= ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-		$link = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum).'/sitemap.xml';
+		$slug = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum);
+        if(substr($slug, -1)=='/'){
+        $link = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum).'sitemap.xml';
+        }else {
+        $link = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum).'/sitemap.xml';
+        }
         if ($currentUrl == $link) {
             // Abort feed creation when an error occured.
             if ($this->asgarosforum->error !== false) {
