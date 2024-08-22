@@ -92,8 +92,9 @@ class AsgarosForumAppearance {
 			}
 
 			// Create meta-tags.
-			echo '<link rel="canonical" href="'.esc_url($link).'" />'.PHP_EOL;
+			echo '<link rel="canonical" href="'.esc_url($link).'" />'.PHP_EOL;			
 			echo '<meta name="description" content="'.stripslashes(esc_attr($description)).'" />'.PHP_EOL;
+			echo '<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>'.PHP_EOL;
 			echo '<meta property="og:url" content="'.esc_url($link).'" />'.PHP_EOL;
 			echo '<meta property="og:title" content="'.esc_attr($title).'" />'.PHP_EOL;
 			echo '<meta property="og:description" content="'.stripslashes(esc_attr($description)).'" />'.PHP_EOL;
@@ -106,22 +107,39 @@ class AsgarosForumAppearance {
 
 				if ($first_post) {
 					$image_url = $this->asgarosforum->extract_image_url($first_post->text);
+                    if ($image_url != '') {
+					$imagedetails = getimagesize($image_url);
+                    $width = $imagedetails[0];
+                    $height = $imagedetails[1];
+					}
 
 					if ($image_url) {
+						echo '<link rel="preload" href="'.esc_url($image_url).'" as="image">'.PHP_EOL;
 						echo '<meta property="og:image" content="'.esc_url($image_url).'" />'.PHP_EOL;
+						echo '<meta property="og:image:secure_url" content="'.esc_url($image_url).'" />'.PHP_EOL;
+						if ($image_url != '') {
+						echo '<meta property="og:image:width" content="'.$width.'" />'.PHP_EOL;
+                        echo '<meta property="og:image:height" content="'.$height.'" />'.PHP_EOL;
+						}
 					}
 				}
 			}
-
-			echo '<meta name="twitter:title" content="'.esc_attr($title).'" />'.PHP_EOL;
+			
+            echo '<meta name="twitter:title" content="'.esc_attr($title).'" />'.PHP_EOL;
 			echo '<meta name="twitter:description" content="'.stripslashes(esc_attr($description)).'" />'.PHP_EOL;
+			echo '<meta name="twitter:site" content="@yworld_1" />'.PHP_EOL;
+            echo '<meta name="twitter:creator" content="@yworld_1" />'.PHP_EOL;
+			$image_url ??= '';
+			if ($image_url != '') {
+			echo '<meta name="twitter:card" content="summary_large_image" />'.PHP_EOL;
+            echo '<meta name="twitter:image" content="'.esc_url($image_url).'" />'.PHP_EOL;
+			}
 
 			do_action('asgarosforum_wp_head');
 
 			echo '<!-- Asgaros Forum - SEO: END -->'.PHP_EOL;
 		}
 	}
-
 	public function add_css() {
 		if ($this->asgarosforum->executePlugin) {
 			// Set path to custom CSS file.
