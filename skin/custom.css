@@ -1,0 +1,28 @@
+#af-wrapper .main-title:before,
+#af-wrapper .editor-row-uploads .upload-hints,
+#af-wrapper .forum-stats,
+#af-wrapper .topic-stats,
+#af-wrapper .action-panel-description,
+#af-wrapper #forum-breadcrumbs,
+#af-wrapper #forum-breadcrumbs a,
+#af-wrapper .forum-post-date,
+#af-wrapper .forum-post-date a,
+#af-wrapper .post-footer,
+#af-wrapper .post-footer a,
+#af-wrapper .signature,
+#af-wrapper span.mention-nice-name,
+#af-wrapper .post-reactions .reaction,
+#af-wrapper #poll-results .poll-result-numbers,
+#af-wrapper #poll-results .poll-result-total,
+#af-wrapper #poll-warning,
+#af-wrapper .topic-icon:before,
+#af-wrapper .report-link,
+#af-wrapper .report-content:before,
+#af-wrapper input::placeholder,
+#af-wrapper .activity-time,
+#af-wrapper .unread-time {
+color: #424242 !important;
+}
+#af-wrapper {
+font-size: 16px !important;
+}

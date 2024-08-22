@@ -5,7 +5,7 @@ Tags: forum, forums, discussion, multisite, community, bulletin, board, asgaros,
 Requires at least: 4.9
 Tested up to: 6.6.1
 Requires PHP: 5.3
-Stable tag: 2.9.0
+Stable tag: 3.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,9 @@ You can find a list of available hooks and filters on this site:
 6. Manage general options
 
 == Changelog ==
+= 3.1.0 =
+* Fork - Added forum map, meta tags, advertising system.
+* Compatibility with WordPress 6.6.1
 = 2.9.0 =
 * Fixed: Cross-Site Request Forgery vulnerability when marking topics as read
 * Compatibility with WordPress 6.5

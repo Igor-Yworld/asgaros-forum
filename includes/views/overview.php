@@ -8,6 +8,9 @@ if ($categories) {
     $forumsAvailable = false;
 
     foreach ($categories as $category) {
+		// Reset forums-counter for ads when we enter a new category.
+        $this->ads->counter_forums = 0;
+		
         echo '<div class="title-element" id="forum-category-'.esc_attr($category->term_id).'">';
             echo esc_html($category->name);
             echo '<span class="last-post-headline">'.esc_html__('Last post', 'asgaros-forum').'</span>';

@@ -2,9 +2,9 @@
 
 /**
  * Plugin Name: Asgaros Forum
- * Plugin URI: https://asgaros.com
- * Description: Asgaros Forum is the best forum solution for WordPress! It comes with dozens of features in a beautiful design and stays slight, simple and fast.
- * Version: 2.9.0
+ * Plugin URI: https://github.com/Igor-Yworld/asgaros-forum
+ * Description: Fork - Added forum map, meta tags, advertising system. Asgaros Forum is the best forum solution for WordPress! It comes with dozens of features in a beautiful design and stays slight, simple and fast.
+ * Version: 3.1.0
  * Author: Thomas Belser
  * Author URI: https://asgaros.com
  * License: GPL2
@@ -54,6 +54,7 @@ require 'includes/forum-memberslist.php';
 require 'includes/forum-reports.php';
 require 'includes/forum-reactions.php';
 require 'includes/forum-mentioning.php';
+require 'includes/forum-ads.php';
 require 'includes/forum-activity.php';
 require 'includes/forum-feed.php';
 require 'includes/forum-map.php';
@@ -68,6 +69,7 @@ require 'includes/forum-widgets.php';
 require 'widgets/widget-recent-posts.php';
 require 'widgets/widget-recent-topics.php';
 require 'widgets/widget-search.php';
+require 'admin/tables/admin-ads-table.php';
 
 // Include integration files.
 require 'integrations/integration-mycred.php';
