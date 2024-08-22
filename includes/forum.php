@@ -181,6 +181,7 @@ class AsgarosForum {
     public $pagination      = null;
     public $unread          = null;
     public $feed            = null;
+    public $map             = null;
     public $permissions     = null;
     public $approval        = null;
     public $spoilers        = null;
@@ -247,6 +248,7 @@ class AsgarosForum {
         $this->pagination    = new AsgarosForumPagination($this);
         $this->unread        = new AsgarosForumUnread($this);
         $this->feed          = new AsgarosForumFeed($this);
+	$this->map           = new AsgarosForumMap($this);
         $this->permissions   = new AsgarosForumPermissions($this);
         $this->approval      = new AsgarosForumApproval($this);
         $this->spoilers      = new AsgarosForumSpoilers($this);
