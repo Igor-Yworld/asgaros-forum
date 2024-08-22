@@ -16,7 +16,7 @@ class AsgarosForumMap {
     }
 
 
-
+// It is possible that you will have to remove the slash in several places in /sitemap.xml
     public function show_map_navigation($current_view) {
 
             switch ($current_view) {
