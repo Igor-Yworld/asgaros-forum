@@ -3,7 +3,7 @@ Contributors: Asgaros, qualmy91
 Donate link: https://asgaros.com/donate/
 Tags: forum, forums, discussion, multisite, community, bulletin, board, asgaros, support
 Requires at least: 4.9
-Tested up to: 6.5
+Tested up to: 6.6.1
 Requires PHP: 5.3
 Stable tag: 2.9.0
 License: GPLv2 or later
