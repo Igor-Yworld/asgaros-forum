@@ -16,6 +16,8 @@ The fork has all the necessary meta tags for posts. Forum maps for adding to sea
 Asgaros Forum is the perfect WordPress plugin if you want to extend your website with a lightweight and feature-rich discussion board. It is easy to set up, super fast and perfectly integrated into WordPress.
 
 ### Support, Demo & Documentation
+https://worldwebinfo.ru/journal
+* [Demo fork]([https://asgaros.com/support/](https://worldwebinfo.ru/journal))
 * [Support & Demo](https://asgaros.com/support/)
 * [Documentation](https://asgaros.com/docs/)
 * [Available Hooks](hooks.md)
