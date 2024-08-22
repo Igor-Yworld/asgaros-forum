@@ -10,7 +10,7 @@
 
 Asgaros Forum is a lightweight and simple plugin to extend WordPress with the function of a forum.
 
-The fork has all the necessary meta tags for posts. Forum maps for adding to search engines, for better indexing and SEO in general.
+The fork has all the necessary meta tags for posts. Forum maps for adding to search engines, for better indexing and SEO in general. Tested with latest versions of PHP 8+, MySQL 8+ and WordPress 6.6.1
 
 ## Description
 Asgaros Forum is the perfect WordPress plugin if you want to extend your website with a lightweight and feature-rich discussion board. It is easy to set up, super fast and perfectly integrated into WordPress.
