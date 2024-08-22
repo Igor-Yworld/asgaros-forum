@@ -56,6 +56,7 @@ require 'includes/forum-reactions.php';
 require 'includes/forum-mentioning.php';
 require 'includes/forum-activity.php';
 require 'includes/forum-feed.php';
+require 'includes/forum-map.php';
 require 'includes/forum-approval.php';
 require 'includes/forum-spoilers.php';
 require 'includes/forum-polls.php';
