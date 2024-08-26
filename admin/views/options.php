@@ -415,6 +415,12 @@ if (!defined('ABSPATH')) {
                             </th>
                             <td><input class="small-text" type="text" name="title_separator" id="title_separator" value="<?php echo esc_attr(stripslashes($this->asgarosforum->options['title_separator'])); ?>"></td>
                         </tr>
+			    <th>
+                                <label for="twitter_creator"><?php esc_html_e('Ник в twitter', 'asgaros-forum'); ?></label>
+                                <span class="description"><?php esc_html_e('Ваш ник в twitter @nickname.', 'asgaros-forum'); ?></span>
+                            </th>
+                            <td><input class="regular-text" type="text" name="twitter_creator" id="twitter_creator" value="<?php echo esc_attr(stripslashes($this->asgarosforum->options['twitter_creator'])); ?>"></td>
+                        </tr>
                     </table>
                 </div>
 
