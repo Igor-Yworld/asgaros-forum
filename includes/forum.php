@@ -132,6 +132,7 @@ class AsgarosForum {
         'seo_url_mode_profile'             => 'slug',
         'custom_url_login'                 => '',
         'custom_url_register'              => '',
+	'twitter_creator'                  => '',
         'view_name_activity'               => 'activity',
         'view_name_subscriptions'          => 'subscriptions',
         'view_name_search'                 => 'search',
@@ -321,6 +322,10 @@ class AsgarosForum {
 
         if (empty($this->options['title_separator'])) {
             $this->options['title_separator'] = '-';
+        }
+	// twitter_creator
+        if (empty($this->options['twitter_creator'])) {
+            $this->options['twitter_creator'] = '@nickname';
         }
     }
 
