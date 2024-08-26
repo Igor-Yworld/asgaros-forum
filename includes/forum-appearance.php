@@ -124,11 +124,11 @@ class AsgarosForumAppearance {
 					}
 				}
 			}
-			
+	// поменять twitter:site "twitter:creator" "twitter:creator"		
             echo '<meta name="twitter:title" content="'.esc_attr($title).'" />'.PHP_EOL;
 			echo '<meta name="twitter:description" content="'.stripslashes(esc_attr($description)).'" />'.PHP_EOL;
-			echo '<meta name="twitter:site" content="@yworld_1" />'.PHP_EOL;
-            echo '<meta name="twitter:creator" content="@yworld_1" />'.PHP_EOL;
+	//		echo '<meta name="twitter:site" content="@yworld_1" />'.PHP_EOL;
+        //    echo '<meta name="twitter:creator" content="@yworld_1" />'.PHP_EOL;
 			$image_url ??= '';
 			if ($image_url != '') {
 			echo '<meta name="twitter:card" content="summary_large_image" />'.PHP_EOL;
