@@ -80,6 +80,7 @@ class AsgarosForum {
         'memberslist_filter_administrator' => true,
         'memberslist_filter_banned'        => true,
         'enable_rss'                       => false,
+	'enable_map'                       => false,
         'load_fontawesome'                 => true,
         'load_fontawesome_compat_v4'       => true,
         'count_topic_views'                => true,
