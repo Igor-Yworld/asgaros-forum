@@ -421,6 +421,10 @@ if (!defined('ABSPATH')) {
                             </th>
                             <td><input class="regular-text" type="text" name="twitter_creator" id="twitter_creator" value="<?php echo esc_attr(stripslashes($this->asgarosforum->options['twitter_creator'])); ?>"></td>
                         </tr>
+			    <tr>
+                            <th><label for="enable_map"><?php esc_html_e('Включить ссылку на xml карту форумов', 'asgaros-forum'); ?></label></th>
+                            <td><input type="checkbox" name="enable_map" id="enable_map" <?php checked(!empty($this->asgarosforum->options['enable_map'])); ?>></td>
+                        </tr>
                     </table>
                 </div>
 
