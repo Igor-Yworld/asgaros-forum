@@ -5,7 +5,7 @@ Tags: forum, forums, discussion, multisite, community, bulletin, board, asgaros,
 Requires at least: 4.9
 Tested up to: 6.6.1
 Requires PHP: 5.3
-Stable tag: 3.1.2
+Stable tag: 3.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,8 @@ You can find a list of available hooks and filters on this site:
 6. Manage general options
 
 == Changelog ==
+= 3.1.3 =
+* Добавлены настройки карты форумов.
 = 3.1.2 =
 * Twitter option added
 = 3.1.1 =
