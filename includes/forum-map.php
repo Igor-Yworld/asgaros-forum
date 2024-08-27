@@ -14,11 +14,22 @@ class AsgarosForumMap {
 //        add_action('asgarosforum_prepare_topic', array($this, 'render_map'));
         add_action('asgarosforum_prepare_forum', array($this, 'render_map'));
     }
+public function is_map_enabled() {
+		$is_map_enabled = false;
 
+		// Return false, if the functionality is disabled.
+		if ($this->asgarosforum->options['enable_map'] === true) {
+			$is_map_enabled = true;
+		}
+
+		$is_map_enabled = apply_filters('asgarosforum_overwrite_is_feed_enabled', $is_map_enabled);
+
+		return $is_map_enabled;
+	}
 
 
     public function show_map_navigation($current_view) {
-
+if ($this->is_map_enabled()) {
             switch ($current_view) {
                 case 'forum':
 					$slug = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum);
@@ -31,10 +42,12 @@ class AsgarosForumMap {
                     echo '<a href="'.esc_url($link).'" target="_blank" rel="nofollow">'.esc_html__('Xml Sitemap', 'asgaros-forum').'</a><!--/noindex-->';
                     break;
 
-        }
+            }
+	}
     }
 
     public function render_map() {
+//		if ($this->is_map_enabled()) {
 		$currentUrl= ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$slug = $this->asgarosforum->get_link('forum', $this->asgarosforum->current_forum);
         if(substr($slug, -1)=='/'){
@@ -96,4 +109,5 @@ class AsgarosForumMap {
             exit;
         }
     }
+	//	}
 }
