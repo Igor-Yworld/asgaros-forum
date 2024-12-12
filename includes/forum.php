@@ -80,7 +80,8 @@ class AsgarosForum {
         'memberslist_filter_administrator' => true,
         'memberslist_filter_banned'        => true,
         'enable_rss'                       => false,
-	'enable_map'                       => false,
+		'enable_map'                       => false,
+		'enable_microdata'                 => false,
         'load_fontawesome'                 => true,
         'load_fontawesome_compat_v4'       => true,
         'count_topic_views'                => true,
@@ -133,7 +134,7 @@ class AsgarosForum {
         'seo_url_mode_profile'             => 'slug',
         'custom_url_login'                 => '',
         'custom_url_register'              => '',
-	'twitter_creator'                  => '',
+		'twitter_creator'                 => '',
         'view_name_activity'               => 'activity',
         'view_name_subscriptions'          => 'subscriptions',
         'view_name_search'                 => 'search',
@@ -190,6 +191,7 @@ class AsgarosForum {
 	public $ads             = null;
     public $feed            = null;
     public $map             = null;
+	public $microdata       = null;
     public $permissions     = null;
     public $approval        = null;
     public $spoilers        = null;
@@ -258,6 +260,7 @@ class AsgarosForum {
         $this->unread        = new AsgarosForumUnread($this);
         $this->feed          = new AsgarosForumFeed($this);
 	    $this->map           = new AsgarosForumMap($this);
+		$this->microdata     = new AsgarosForumMicrodata($this);
         $this->permissions   = new AsgarosForumPermissions($this);
         $this->approval      = new AsgarosForumApproval($this);
         $this->spoilers      = new AsgarosForumSpoilers($this);
@@ -324,7 +327,7 @@ class AsgarosForum {
         if (empty($this->options['title_separator'])) {
             $this->options['title_separator'] = '-';
         }
-	// twitter_creator
+		// twitter_creator
         if (empty($this->options['twitter_creator'])) {
             $this->options['twitter_creator'] = '@nickname';
         }

@@ -55,6 +55,21 @@ class AsgarosForumAppearance {
 			echo '<!-- Asgaros Forum - SEO: BEGIN -->'.PHP_EOL;
 
 			$link  = ($this->asgarosforum->current_page > 0) ? $this->asgarosforum->get_link('current') : esc_url(remove_query_arg('part', $this->asgarosforum->get_link('current', false, false, '', false)));
+			$part_description = ($this->asgarosforum->getMetaTitle()) ? $this->asgarosforum->getMetaTitle() : get_the_title();
+			// Проверяем, содержит ли строка символ "|"
+            if (strpos($part_description, '|') !== false) {
+           // Регулярное выражение для удаления текста до |
+           $result = preg_replace('/^.*?\|/', '', $part_description);
+    
+           // Удаляем пробелы в начале строки, если они остались
+           $result = '|'.ltrim($result);
+    
+          // Вывод результата
+          $result; // Вывод: "и оставить только это часть текста"
+          } else {
+         // Если символа "|" нет, ничего не выводим
+          $result = '';
+          }
 			$title = ($this->asgarosforum->getMetaTitle()) ? $this->asgarosforum->getMetaTitle() : get_the_title();
 
 			// By default use the page title as description.
@@ -88,13 +103,15 @@ class AsgarosForumAppearance {
 			}
 
 			if ($prevent_indexing) {
+				header("HTTP/1.0 404 Not Found");
 				echo '<meta name="robots" content="noindex, follow" />'.PHP_EOL;
 			}
 
 			// Create meta-tags.
 			echo '<link rel="canonical" href="'.esc_url($link).'" />'.PHP_EOL;			
-			echo '<meta name="description" content="'.stripslashes(esc_attr($description)).'" />'.PHP_EOL;
+			echo '<meta name="description" content="'.stripslashes(esc_attr($description)).''.$result.'" />'.PHP_EOL;
 			echo '<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>'.PHP_EOL;
+			echo '<meta property="og:type" content="website" />'.PHP_EOL;
 			echo '<meta property="og:url" content="'.esc_url($link).'" />'.PHP_EOL;
 			echo '<meta property="og:title" content="'.esc_attr($title).'" />'.PHP_EOL;
 			echo '<meta property="og:description" content="'.stripslashes(esc_attr($description)).'" />'.PHP_EOL;
@@ -124,11 +141,11 @@ class AsgarosForumAppearance {
 					}
 				}
 			}
-	// опции добавлены twitter:site "twitter:creator"		
+			
             echo '<meta name="twitter:title" content="'.esc_attr($title).'" />'.PHP_EOL;
 			echo '<meta name="twitter:description" content="'.stripslashes(esc_attr($description)).'" />'.PHP_EOL;
-	                echo '<meta name="twitter:site" content="'.esc_attr(stripslashes($this->asgarosforum->options['twitter_creator'])).'" />'.PHP_EOL;
-                        echo '<meta name="twitter:creator" content="'.esc_attr(stripslashes($this->asgarosforum->options['twitter_creator'])).'" />'.PHP_EOL;
+			echo '<meta name="twitter:site" content="'.esc_attr(stripslashes($this->asgarosforum->options['twitter_creator'])).'" />'.PHP_EOL;
+            echo '<meta name="twitter:creator" content="'.esc_attr(stripslashes($this->asgarosforum->options['twitter_creator'])).'" />'.PHP_EOL;
 			$image_url ??= '';
 			if ($image_url != '') {
 			echo '<meta name="twitter:card" content="summary_large_image" />'.PHP_EOL;

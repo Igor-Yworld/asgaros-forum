@@ -14,6 +14,7 @@ class AsgarosForumMap {
 //        add_action('asgarosforum_prepare_topic', array($this, 'render_map'));
         add_action('asgarosforum_prepare_forum', array($this, 'render_map'));
     }
+
 public function is_map_enabled() {
 		$is_map_enabled = false;
 
@@ -26,7 +27,6 @@ public function is_map_enabled() {
 
 		return $is_map_enabled;
 	}
-
 
     public function show_map_navigation($current_view) {
 if ($this->is_map_enabled()) {
@@ -43,7 +43,7 @@ if ($this->is_map_enabled()) {
                     break;
 
             }
-	}
+		}
     }
 
     public function render_map() {
@@ -107,7 +107,7 @@ if ($this->is_map_enabled()) {
             echo '</urlset>'.PHP_EOL;
 
             exit;
+            }
         }
-    }
-	//	}
+//	}
 }

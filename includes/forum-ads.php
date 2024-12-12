@@ -14,7 +14,11 @@ class AsgarosForumAds {
     public function __construct($object) {
         $this->asgarosforum = $object;
 
-        if ($this->asgarosforum->options['enable_ads']) {
+        add_action('init', array($this, 'initialize'));
+    }
+	
+	 public function initialize() {
+		 if ($this->asgarosforum->options['enable_ads']) {
             // Define available locations.
             $this->locations = array(
                 'top'       => __('Top', 'asgaros-forum'),
@@ -36,7 +40,9 @@ class AsgarosForumAds {
             add_action('asgarosforum_after_post', array($this, 'include_ads_post'));
             add_action('asgarosforum_content_bottom', array($this, 'include_ads_bottom'));
         }
-    }
+		 
+		 
+	}
 
     // Preparation for frontend ads.
     public function prepare_ads() {

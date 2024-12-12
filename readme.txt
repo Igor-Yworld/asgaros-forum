@@ -85,7 +85,7 @@ You can find a list of available hooks and filters on this site:
 
 == Changelog ==
 = 3.1.3 =
-* Добавлены настройки карты форумов.
+* Added map settings
 = 3.1.2 =
 * Twitter option added
 = 3.1.1 =

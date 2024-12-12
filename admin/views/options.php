@@ -415,15 +415,20 @@ if (!defined('ABSPATH')) {
                             </th>
                             <td><input class="small-text" type="text" name="title_separator" id="title_separator" value="<?php echo esc_attr(stripslashes($this->asgarosforum->options['title_separator'])); ?>"></td>
                         </tr>
-			    <th>
+						<tr>
+                            <th>
                                 <label for="twitter_creator"><?php esc_html_e('Ник в twitter', 'asgaros-forum'); ?></label>
                                 <span class="description"><?php esc_html_e('Ваш ник в twitter @nickname.', 'asgaros-forum'); ?></span>
                             </th>
                             <td><input class="regular-text" type="text" name="twitter_creator" id="twitter_creator" value="<?php echo esc_attr(stripslashes($this->asgarosforum->options['twitter_creator'])); ?>"></td>
                         </tr>
-			    <tr>
+						<tr>
                             <th><label for="enable_map"><?php esc_html_e('Включить ссылку на xml карту форумов', 'asgaros-forum'); ?></label></th>
                             <td><input type="checkbox" name="enable_map" id="enable_map" <?php checked(!empty($this->asgarosforum->options['enable_map'])); ?>></td>
+                        </tr>
+						<tr>
+                            <th><label for="enable_microdata"><?php esc_html_e('Включить микроразметку DiscussionForumPosting', 'asgaros-forum'); ?></label></th>
+                            <td><input type="checkbox" name="enable_microdata" id="enable_microdata" <?php checked(!empty($this->asgarosforum->options['enable_microdata'])); ?>></td>
                         </tr>
                     </table>
                 </div>
